@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="https://res.cloudinary.com/dovax6xke/image/upload/f_auto,q_auto/v1/carrier/fs5ukivkdqcybsbfn2d6">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dovax6xke/image/upload/f_auto,q_auto/v1/carrier/fs5ukivkdqcybsbfn2d6">
+    <link rel="apple-touch-icon" href="https://res.cloudinary.com/dovax6xke/image/upload/f_auto,q_auto/v1/carrier/fs5ukivkdqcybsbfn2d6">
+    <title>CropConnect - Navigation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <div id="root"></div> 
+    <nav class="nav-container">
+        <div class="logo" onclick="showPage('intro')">
+            <img src="https://res.cloudinary.com/dovax6xke/image/upload/f_auto,q_auto/v1/carrier/Pics/p5pgabvnxn7nfh1mj3sf" alt="Company Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a onclick="showPage('home')">Home</a></li>
+            <li><a onclick="showPage('crops')">Crops</a></li>
+            <li><a onclick="showPage('production')">Production</a></li>
+            <li><a onclick="showPage('protection')">Protection</a></li>
+            <li><a onclick="showPage('schemes')">Schemes</a></li>
+            <li><a onclick="showPage('contract')">Contract</a></li>
+            <li><a onclick="showPage('customer-care')">Customer Care</a></li>
+        </ul>
+        <button id="backButton">Go Back</button>
+        <div class="profile-container" onclick="toggleDropdown()">
+            <div class="profile-img">
+                <img src="https://cdn-icons-png.flaticon.com/512/6522/6522516.png" alt="Profile">
+            </div>
+            <div class="dropdown-menu">
+                <button onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-area" id="content">
+        <h1>Welcome to CropConnect</h1>
+        <p>This is the intro page. Click the navigation links above to explore!</p>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <p>© 2025 CropConnect. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+       const pages = {
+    'intro': `
+        <h1>Welcome to CropConnect</h1>
+        <p>This is the intro page. Click the navigation links above to explore!</p>
+    `,
+    'home': `
+        <h1>Home</h1>
+        <p>Welcome to your farming hub. Find all your agricultural needs here.</p>
+    `,
+    'crops': `
+    <div class="crops-container">
+        <h1>Crop Categories</h1>
+        <p>Select a category to explore different types of crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('horticulture')">
+                <img src="https://res.cloudinary.com/dovax6xke/image/upload/v1741095042/carrier/jvgsjxvw4wlhyfed1tio.jpg" alt="Horticulture">
+                <div class="horticulture-text">Horticulture</div>
+            </div>
+        </div>
+    </div>
+`,
+
+
+   
+  'horticulture': `
+    <div class="crops-container">
+        <h1>Horticulture Crops</h1>
+        <p>Select a category to explore different horticultural crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('fruits')">
+                <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Fruits">
+                <div class="horticulture-text">Fruits</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('vegetables')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Vegetables">
+                <div class="horticulture-text">Vegetables</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('flowers')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Flowers">
+                <div class="horticulture-text">Flowers</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('herbs')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2284/2284236.png" alt="Herbs">
+                <div class="horticulture-text">Herbs</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('spices')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Spices">
+                <div class="horticulture-text">Spices</div>
+            </div>
+        </div>
+    </div>
+`,
+
+'fruits': `
+    <div class="crops-container">
+        <h1>Fruits crops</h1>
+        <p>Select a category to explore different horticultural crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('tropical fruits')">
+                <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Tropical Fruits">
+                <div class="horticulture-text">Tropical Fruits</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('subtropical fruits')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Sub-Tropical Fruits">
+                <div class="horticulture-text" align="center">Sub-Tropical Fruits</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('citrus fruits')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Citrus Fruits">
+                <div class="horticulture-text">Citrus Fruits</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('temperature fruits')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2284/2284236.png" alt="Temperature Fruits">
+                <div class="horticulture-text" align="center">Temperature Fruits</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('vine fruits')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Vine fruits">
+                <div class="horticulture-text">Vine fruits</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('berry fruits')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Berry fruits">
+                <div class="horticulture-text">Berry fruits</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('minor fruits')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Minor fruits">
+                <div class="horticulture-text">Minor fruits</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('exotic fruits')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Exotic fruits">
+                <div class="horticulture-text">Exotic fruits</div>
+            </div>
+        </div>
+    </div>
+`,
+
+'tropical fruits': `
+    <div class="crops-container">
+        <h1>Tropical Fruits</h1>
+        <p>Select a category to explore different horticultural crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('Mango')">
+                <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Mango">
+                <div class="horticulture-text">Mango</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Banana')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Banana">
+                <div class="horticulture-text">Banana</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Papaya')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Papaya">
+                <div class="horticulture-text">Papaya</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Pineapple')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2284/2284236.png" alt="Pineapple">
+                <div class="horticulture-text">Pineapple</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Guava')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Guava">
+                <div class="horticulture-text">Guava</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Sapota')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Sapota">
+                <div class="horticulture-text">Sapota</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('jack fruits')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="jack fruits">
+                <div class="horticulture-text">Jack fruits</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Custard Apple')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Custard Apple">
+                <div class="horticulture-text">Custard Apple</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Soursop')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Soursop">
+                <div class="horticulture-text">Soursop</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Breadfruit')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Breadfruit">
+                <div class="horticulture-text">Breadfruit</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Starfruit')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Starfruit">
+                <div class="horticulture-text">Starfruit</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Lychee')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Lychee">
+                <div class="horticulture-text">Lychee</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Rambutan')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Rambutan">
+                <div class="horticulture-text">Rambutan</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Longan')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Longan">
+                <div class="horticulture-text">Longan</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Mangosteen')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Mangosteen">
+                <div class="horticulture-text">Mangosteen</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Durian')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Durian">
+                <div class="horticulture-text">Durian</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Passion Fruit')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Passion Fruit">
+                <div class="horticulture-text">Passion Fruit</div>
+            </div>
+                <div class="horticulture-container" onclick="showPage('Ice Apple')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Ice Apple">
+                <div class="horticulture-text">Ice Apple</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Coconut')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Coconut">
+                <div class="horticulture-text">Coconut</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Cashew Apple')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Cashew Apple">
+                <div class="horticulture-text">Cashew Apple</div>
+            </div>
+        </div>
+    </div>
+`,
+'subtropical fruits': `
+    <div class="crops-container">
+        <h1>Sub-Tropical Fruits</h1>
+        <p>Select a category to explore different horticultural crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('Pomegranate')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Pomegranate">
+                <div class="horticulture-text">Pomegranate</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Amla')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Amla">
+                <div class="horticulture-text">Amla</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Bael')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Bael">
+                <div class="horticulture-text">Bael</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Tamarind')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Tamarind">
+                <div class="horticulture-text">Tamarind</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Java Plum')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Java Plum">
+                <div class="horticulture-text">Java Plum</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Rose Apple')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Rose Apple">
+                <div class="horticulture-text">Rose Apple</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Date Palm')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Date Palm">
+                <div class="horticulture-text">Date Palm</div>
+            </div>
+        </div>
+    </div>
+`,
+'citrus fruits': `
+    <div class="crops-container">
+        <h1>Citrus Fruits</h1>
+        <p>Select a category to explore different horticultural crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('Sweet Orange')">
+                <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Sweet Orange">
+                <div class="horticulture-text">Sweet Orange</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Acid Lime')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Acid Lime">
+                <div class="horticulture-text">Acid Lime</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Mandarian Orange')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Mandarian Orange">
+                <div class="horticulture-text" align="center">Mandarian Orange</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Grapefruit')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2284/2284236.png" alt="Grapefruit">
+                <div class="horticulture-text">Grapefruit</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Pummelo')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Pummelo">
+                <div class="horticulture-text">Pummelo</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Citron')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Citron">
+                <div class="horticulture-text">Citron</div>
+            </div>
+            </div>
+    </div>
+`,
+'temperature fruits': `
+    <div class="crops-container">
+        <h1>Citrus Fruits</h1>
+        <p>Select a category to explore different horticultural crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('Apple')">
+                <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Apple">
+                <div class="horticulture-text">Apple</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Pear')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Pear">
+                <div class="horticulture-text">Pear</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Plum')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Plum">
+                <div class="horticulture-text" align="center">Plum</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Peach')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2284/2284236.png" alt="Peach">
+                <div class="horticulture-text">Peach</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Apricot')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Apricot">
+                <div class="horticulture-text">Apricot</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Cherry')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Cherry">
+                <div class="horticulture-text">Cherry</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Strawberry')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Strawberry">
+                <div class="horticulture-text">Strawberry</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Raspberry')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Raspberry">
+                <div class="horticulture-text">Raspberry</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Blackberry')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Blackberry">
+                <div class="horticulture-text">Blackberry</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Blueberry')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Blueberry">
+                <div class="horticulture-text">Blueberry</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Mulberry')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Mulberry">
+                <div class="horticulture-text">Mulberry</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Gooseberry')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Gooseberry">
+                <div class="horticulture-text">Gooseberry</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Currants')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Currants">
+                <div class="horticulture-text">Currants</div>
+            </div>
+        </div>
+    </div>
+`,
+'vine fruits': `
+    <div class="crops-container">
+        <h1>Vine Fruits</h1>
+        <p>Select a category to explore different horticultural crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('Grape')">
+                <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Grape">
+                <div class="horticulture-text">Grape</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Kiwi')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Kiwi">
+                <div class="horticulture-text">Kiwi</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Melons')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Melons">
+                <div class="horticulture-text" align="center">Melons</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Passion Fruit')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2544/2544036.png" alt="Passion Fruit">
+                <div class="horticulture-text">Passion Fruit</div>
+            </div>
+        </div>
+    </div>
+`,
+'berry fruits': `
+    <div class="crops-container">
+        <h1>Berry Fruits</h1>
+        <p>Select a category to explore different horticultural crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('Cape Gooseberry')">
+                <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Cape Gooseberry">
+                <div class="horticulture-text">Cape Gooseberry</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Jaboticaba')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Jaboticaba">
+                <div class="horticulture-text">Jaboticaba</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Boysenberry')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Boysenberry">
+                <div class="horticulture-text" align="center">Boysenberry</div>
+            </div>
+        </div>
+    </div>
+`,
+'minor fruits': `
+    <div class="crops-container">
+        <h1>Minor Fruits</h1>
+        <p>Select a category to explore different horticultural crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('Fig')">
+                <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Fig">
+                <div class="horticulture-text">Fig</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Loquat')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Loquat">
+                <div class="horticulture-text">Loquat</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Noni')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Noni">
+                <div class="horticulture-text" align="center">Noni</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Surinam Cherry')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Surinam Cherry">
+                <div class="horticulture-text" align="center">Surinam Cherry</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Duku')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Duku">
+                <div class="horticulture-text" align="center">Duku</div>
+            </div>
+        </div>
+    </div>
+`,
+
+'exotic fruits': `
+    <div class="crops-container">
+        <h1>Exotic Fruits</h1>
+        <p>Select a category to explore different horticultural crops.</p>
+        <div class="horticulture-wrapper">
+            <div class="horticulture-container" onclick="showPage('Camu Camu')">
+                <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Camu Camu">
+                <div class="horticulture-text">Camu Camu</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Snake Fruit')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Snake Fruit">
+                <div class="horticulture-text">Snake Fruit</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Ackee')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Ackee">
+                <div class="horticulture-text" align="center">Ackee</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Lanzones')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Lanzones">
+                <div class="horticulture-text" align="center">Lanzones</div>
+            </div>
+            <div class="horticulture-container" onclick="showPage('Buddha Hand')">
+                <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Buddha Hand">
+                <div class="horticulture-text" align="center">Buddha Hand</div>
+            </div>
+        </div>
+    </div>
+`,
+'apple': `
+    <div class="crops-container">
+        <h1>Apple</h1>
+        <p>Best practices for growing apples.</p>
+        <ul>
+            <li>Plant in cool climates with well-drained soil.</li>
+            <li>Prune regularly to encourage growth.</li>
+            <li>Protect from pests and diseases.</li>
+        </ul>
+    </div>
+`,
+
+'banana': `
+    <div class="crops-container">
+        <h1>Banana</h1>
+        <p>How to cultivate high-yield bananas.</p>
+        <ul>
+            <li>Requires warm, humid climate.</li>
+            <li>Provide ample water but avoid waterlogging.</li>
+            <li>Fertilize with potassium-rich nutrients.</li>
+        </ul>
+    </div>
+`,
+'papaya': `
+    <div class="crops-container">
+        <h1>Papaya</h1>
+        <p>How to cultivate high-yield bananas.</p>
+        <ul>
+            <li>Requires warm, humid climate.</li>
+            <li>Provide ample water but avoid waterlogging.</li>
+            <li>Fertilize with potassium-rich nutrients.</li>
+        </ul>
+    </div>
+`,
+
+'Orange': `
+    <div class="crops-container">
+        <h1>orange</h1>
+        <p>How to cultivate high-yield bananas.</p>
+        <ul>
+            <li>Requires warm, humid climate.</li>
+            <li>Provide ample water but avoid waterlogging.</li>
+            <li>Fertilize with potassium-rich nutrients.</li>
+        </ul>
+    </div>
+`,
+'vegetables': `
+   <div class="crops-container">
+    <h1>Vegetables</h1>
+    <p>Click on a vegetable to learn more.</p>
+    <div class="horticulture-wrapper">
+        <div class="horticulture-container" onclick="showPage('Tomato')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590685.png" alt="Tomato">
+            <div class="horticulture-text">Tomato</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Potato')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590684.png" alt="Potato">
+            <div class="horticulture-text">Potato</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Carrot')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590682.png" alt="Carrot">
+            <div class="horticulture-text">Carrot</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Cabbage')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590687.png" alt="Cabbage">
+            <div class="horticulture-text">Cabbage</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Cauliflower')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590688.png" alt="Cauliflower">
+            <div class="horticulture-text">Cauliflower</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Spinach')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590690.png" alt="Spinach">
+            <div class="horticulture-text">Spinach</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Lettuce')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590691.png" alt="Lettuce">
+            <div class="horticulture-text">Lettuce</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Onion')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590693.png" alt="Onion">
+            <div class="horticulture-text">Onion</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Garlic')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590694.png" alt="Garlic">
+            <div class="horticulture-text">Garlic</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Peas')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590695.png" alt="Peas">
+            <div class="horticulture-text">Peas</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Beans')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590696.png" alt="Beans">
+            <div class="horticulture-text">Beans</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Capsicum')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590698.png" alt="Capsicum">
+            <div class="horticulture-text">Capsicum</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Eggplant')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590700.png" alt="Eggplant">
+            <div class="horticulture-text">Eggplant</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Cucumber')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590701.png" alt="Cucumber">
+            <div class="horticulture-text">Cucumber</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Radish')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590702.png" alt="Radish">
+            <div class="horticulture-text">Radish</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Beetroot')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590703.png" alt="Beetroot">
+            <div class="horticulture-text">Beetroot</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Pumpkin')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590704.png" alt="Pumpkin">
+            <div class="horticulture-text">Pumpkin</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Sweet Corn')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590705.png" alt="Sweet Corn">
+            <div class="horticulture-text">Sweet Corn</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Zucchini')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590706.png" alt="Zucchini">
+            <div class="horticulture-text">Zucchini</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Broccoli')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590707.png" alt="Broccoli">
+            <div class="horticulture-text">Broccoli</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Kale')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590708.png" alt="Kale">
+            <div class="horticulture-text">Kale</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Celery')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590709.png" alt="Celery">
+            <div class="horticulture-text">Celery</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Asparagus')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590710.png" alt="Asparagus">
+            <div class="horticulture-text">Asparagus</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Okra')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590711.png" alt="Okra">
+            <div class="horticulture-text">Okra</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Turnip')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590712.png" alt="Turnip">
+            <div class="horticulture-text">Turnip</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Leek')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590713.png" alt="Leek">
+            <div class="horticulture-text">Leek</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Chili Pepper')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590714.png" alt="Chili Pepper">
+            <div class="horticulture-text">Chili Pepper</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Swiss Chard')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590715.png" alt="Swiss Chard">
+            <div class="horticulture-text">Swiss Chard</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Artichoke')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590716.png" alt="Artichoke">
+            <div class="horticulture-text">Artichoke</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Fennel')">
+            <img src="https://cdn-icons-png.flaticon.com/512/590/590717.png" alt="Fennel">
+            <div class="horticulture-text">Fennel</div>
+        </div>
+    </div>
+</div>
+`,
+
+'flowers': `
+    <div class="crops-container">
+        <h1>Flowers</h1>
+        <p>Select a flower to learn more.</p>
+       <div class="crops-container">
+        <div class="horticulture-container" onclick="showPage('Rose')">
+            <img src="https://cdn-icons-png.flaticon.com/512/415/415744.png" alt="Rose">
+            <div class="horticulture-text">Rose</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Chrysanthemum')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Chrysanthemum">
+            <div class="horticulture-text">Chrysanthemum</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Daisy')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2529/2529949.png" alt="Daisy">
+            <div class="horticulture-text">Daisy</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Marigold')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Marigold">
+            <div class="horticulture-text">Marigold</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Lily')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Lily">
+            <div class="horticulture-text">Lily</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Tulip')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Tulip">
+            <div class="horticulture-text">Tulip</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Orchid')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Orchid">
+            <div class="horticulture-text">Orchid</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Sunflower')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Sunflower">
+            <div class="horticulture-text">Sunflower</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Jasmine')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Jasmine">
+            <div class="horticulture-text">Jasmine</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Gerbera')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Gerbera">
+            <div class="horticulture-text">Gerbera</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Carnation')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Carnation">
+            <div class="horticulture-text">Carnation</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Poppy')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Poppy">
+            <div class="horticulture-text">Poppy</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Peony')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Peony">
+            <div class="horticulture-text">Peony</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Dahlia')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Dahlia">
+            <div class="horticulture-text">Dahlia</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Zinnia')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Zinnia">
+            <div class="horticulture-text">Zinnia</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Begonia')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Begonia">
+            <div class="horticulture-text">Begonia</div>
+        </div>
+
+        <div class="horticulture-container" onclick="showPage('Aster')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Aster">
+            <div class="horticulture-text">Aster</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Lavender')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Lavender">
+            <div class="horticulture-text">Lavender</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Petunia')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Petunia">
+            <div class="horticulture-text">Petunia</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Snapdragon')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Snapdragon">
+            <div class="horticulture-text">Snapdragon</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Hyacinth')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Hyacinth">
+            <div class="horticulture-text">Hyacinth</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Iris')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Iris">
+            <div class="horticulture-text">Iris</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Primrose')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Primrose">
+            <div class="horticulture-text">Primrose</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Camellia')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Camellia">
+            <div class="horticulture-text">Camellia</div>
+        </div>
+
+        <div class="horticulture-container" onclick="showPage('Gardenia')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Gardenia">
+            <div class="horticulture-text">Gardenia</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Magnolia')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Magnolia">
+            <div class="horticulture-text">Magnolia</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Hibiscus')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Hibiscus">
+            <div class="horticulture-text">Hibiscus</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Morning Glory')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Morning Glory">
+            <div class="horticulture-text">Morning Glory</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Foxglove')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Foxglove">
+            <div class="horticulture-text">Foxglove</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Freesia')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Freesia">
+            <div class="horticulture-text">Freesia</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Daffodil')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Daffodil">
+            <div class="horticulture-text">Daffodil</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Violet')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Violet">
+            <div class="horticulture-text">Violet</div>
+        </div>
+
+        <div class="horticulture-container" onclick="showPage('Pansy')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Pansy">
+            <div class="horticulture-text">Pansy</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Anemone')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Anemone">
+            <div class="horticulture-text">Anemone</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Bluebell')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Bluebell">
+            <div class="horticulture-text">Bluebell</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Lantana')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Lantana">
+            <div class="horticulture-text">Lantana</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Ixora')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Ixora">
+            <div class="horticulture-text">Ixora</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Periwinkle')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Periwinkle">
+            <div class="horticulture-text">Periwinkle</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Lotus')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Lotus">
+            <div class="horticulture-text">Lotus</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Cosmos')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Cosmos">
+            <div class="horticulture-text">Cosmos</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Calendula')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Calendula">
+            <div class="horticulture-text">Calendula</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Salvia')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Salvia">
+            <div class="horticulture-text">Salvia</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Sweet Pea')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Sweet Pea">
+            <div class="horticulture-text">Sweet Pea</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Ranunculus')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Ranunculus">
+            <div class="horticulture-text">Ranunculus</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Coreopsis')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Coreopsis">
+            <div class="horticulture-text">Coreopsis</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Gladiolus')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Gladiolus">
+            <div class="horticulture-text">Gladiolus</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Heliconia')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Heliconia">
+            <div class="horticulture-text">Heliconia</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Fuchsia')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Fuchsia">
+            <div class="horticulture-text">Fuchsia</div>
+        </div>
+
+        <div class="horticulture-container" onclick="showPage('Plumeria')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Plumeria">
+            <div class="horticulture-text">Plumeria</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Mogra')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Mogra">
+            <div class="horticulture-text">Mogra</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Adenium')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Adenium">
+            <div class="horticulture-text">Adenium</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Anthrium')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Anthrium">
+            <div class="horticulture-text">Anthrium</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Canna Lily')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Canna Lily">
+            <div class="horticulture-text">Canna Lily</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Bleeding Heart')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Bleeding Heart">
+            <div class="horticulture-text">Bleeding Heart</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Black-eyed Susan')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Black-eyed Susan">
+            <div class="horticulture-text" align="center">Black-eyed Susan</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Forget-me-not')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Forget-me-not">
+            <div class="horticulture-text">Forget-me-not</div>
+        </div>
+
+        <div class="horticulture-container" onclick="showPage('Snowdrop')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Snowdrop">
+            <div class="horticulture-text">Snowdrop</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Columbine')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Columbine">
+            <div class="horticulture-text">Columbine</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Tuberose')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Tuberose">
+            <div class="horticulture-text">Tuberose</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Portulaca')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Portulaca">
+            <div class="horticulture-text">Portulaca</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Coreopsis')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Coreopsis">
+            <div class="horticulture-text">Coreopsis</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Coneflower')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Coneflower">
+            <div class="horticulture-text">Coneflower</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Stock')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Stock">
+            <div class="horticulture-text">Stock</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Strawflower')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Strawflower">
+            <div class="horticulture-text">Strawflower</div>
+        </div>
+    </div>
+</div>
+`,
+'Rose': `
+    <div class="crops-container">
+        <h1>Rose</h1>
+        <p>Best ways to grow beautiful roses.</p>
+        <ul>
+            <li>Provide full sunlight.</li>
+            <li>Water deeply but not too frequently.</li>
+            <li>Use organic compost for better blooms.</li>
+        </ul>
+    </div>
+`,
+
+'herbs': `
+    <div class="crops-container">
+    <h1>Herbs</h1>
+    <p>Click on a herb to learn more.</p>
+    <div class="horticulture-wrapper">
+        <div class="horticulture-container" onclick="showPage('Basil')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Basil">
+            <div class="horticulture-text">Basil</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Mint')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Mint">
+            <div class="horticulture-text">Mint</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Coriander')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Coriander">
+            <div class="horticulture-text">Coriander (Cilantro)</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Parsley')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Parsley">
+            <div class="horticulture-text">Parsley</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Rosemary')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Rosemary">
+            <div class="horticulture-text">Rosemary</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Thyme')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Thyme">
+            <div class="horticulture-text">Thyme</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Oregano')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Oregano">
+            <div class="horticulture-text">Oregano</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Sage')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Sage">
+            <div class="horticulture-text">Sage</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Dill')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Dill">
+            <div class="horticulture-text">Dill</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Chives')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Chives">
+            <div class="horticulture-text">Chives</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Lemongrass')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Lemongrass">
+            <div class="horticulture-text">Lemongrass</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Fennel')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Fennel">
+            <div class="horticulture-text">Fennel</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Bay Leaf')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Bay Leaf">
+            <div class="horticulture-text">Bay Leaf</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Tarragon')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Tarragon">
+            <div class="horticulture-text">Tarragon</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Marjoram')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Marjoram">
+            <div class="horticulture-text">Marjoram</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Chervil')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Chervil">
+            <div class="horticulture-text">Chervil</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Lavender')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Lavender">
+            <div class="horticulture-text">Lavender</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Stevia')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Stevia">
+            <div class="horticulture-text">Stevia</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Holy Basil')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Holy Basil">
+            <div class="horticulture-text">Holy Basil (Tulsi)</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Curry Leaf')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Curry Leaf">
+            <div class="horticulture-text">Curry Leaf</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Peppermint')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Peppermint">
+            <div class="horticulture-text">Peppermint</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Spearmint')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Spearmint">
+            <div class="horticulture-text">Spearmint</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Catnip')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Catnip">
+            <div class="horticulture-text">Catnip</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Lovage')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Lovage">
+            <div class="horticulture-text">Lovage</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Sorrel')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Sorrel">
+            <div class="horticulture-text">Sorrel</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Savory')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Savory">
+            <div class="horticulture-text">Savory</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Borage')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Borage">
+            <div class="horticulture-text">Borage</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Rue')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Rue">
+            <div class="horticulture-text">Rue</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Hyssop')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Hyssop">
+            <div class="horticulture-text">Hyssop</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Angelica')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Angelica">
+            <div class="horticulture-text">Angelica</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Yarrow')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Yarrow">
+            <div class="horticulture-text">Yarrow</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Chamomile')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="Chamomile">
+            <div class="horticulture-text">Chamomile</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('St John\'s Wort')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909834.png" alt="St John's Wort">
+            <div class="horticulture-text">St John's Wort</div>
+        </div>
+    </div>
+</div>
+`,
+
+'basil': `
+    <div class="crops-container">
+        <h1>Basil</h1>
+        <p>How to cultivate basil successfully.</p>
+        <ul>
+            <li>Requires warm temperatures.</li>
+            <li>Water regularly but avoid wet soil.</li>
+            <li>Prune to encourage bushy growth.</li>
+        </ul>
+    </div>
+`,
+
+'spices': `
+    <div class="crops-container">
+    <h1>Herbs</h1>
+    <p>Click on a herb to learn more.</p>
+    <div class="crops-container">
+        <div class="horticulture-container" onclick="showPage('Black Pepper')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Black Pepper">
+            <div class="horticulture-text">Black Pepper</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Cinnamon')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Cinnamon">
+            <div class="horticulture-text">Cinnamon</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Clove')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Clove">
+            <div class="horticulture-text">Clove</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Cardamom')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Cardamom">
+            <div class="horticulture-text">Cardamom</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Nutmeg')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Nutmeg">
+            <div class="horticulture-text">Nutmeg</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Turmeric')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Turmeric">
+            <div class="horticulture-text">Turmeric</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Saffron')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Saffron">
+            <div class="horticulture-text">Saffron</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Cumin')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Cumin">
+            <div class="horticulture-text">Cumin</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Mustard')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Mustard">
+            <div class="horticulture-text">Mustard</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Fennel')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Fennel">
+            <div class="horticulture-text">Fennel</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Star Anise')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Star Anise">
+            <div class="horticulture-text">Star Anise</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Chili Powder')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Chili Powder">
+            <div class="horticulture-text">Chili Powder</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Ginger')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Ginger">
+            <div class="horticulture-text">Ginger</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Bay Leaf')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Bay Leaf">
+            <div class="horticulture-text">Bay Leaf</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Caraway')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Caraway">
+            <div class="horticulture-text">Caraway</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Allspice')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Allspice">
+            <div class="horticulture-text">Allspice</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Coriander Seed')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Coriander Seed">
+            <div class="horticulture-text">Coriander Seed</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Fenugreek')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Fenugreek">
+            <div class="horticulture-text">Fenugreek</div>
+        </div>
+        <div class="horticulture-container" onclick="showPage('Aniseed')">
+            <img src="https://cdn-icons-png.flaticon.com/512/616/616494.png" alt="Aniseed">
+            <div class="horticulture-text">Aniseed</div>
+        </div>
+    </div>
+</div>
+`,
+
+'turmeric': `
+    <div class="crops-container">
+        <h1>Turmeric</h1>
+        <p>Steps to grow turmeric successfully.</p>
+        <ul>
+            <li>Plant in warm, humid climates.</li>
+            <li>Use well-drained, fertile soil.</li>
+            <li>Harvest after 7-10 months.</li>
+        </ul>
+    </div>
+`,
+
+'chilli': `
+    <div class="crops-container">
+        <h1>Chilli</h1>
+        <p>Steps to grow Chilli successfully.</p>
+        <ul>
+            <li>Plant in warm, humid climates.</li>
+            <li>Use well-drained, fertile soil.</li>
+            <li>Harvest after 7-10 months.</li>
+        </ul>
+    </div>
+`,
+
+
+            'production': `
+                <h1>Production</h1>
+                <p>Learn about modern farming techniques and production methods.</p>
+            `,
+            'protection': `
+                <h1>Protection</h1>
+                <p>Discover crop protection solutions and pest management.</p>
+            `,
+            'schemes': `
+                <h1>Schemes</h1>
+                <p>Find government schemes and subsidies for farmers.</p>
+            `,
+            'contract': `
+                <h1>Contract</h1>
+                <p>Information about contract farming opportunities.</p>
+            `,
+            'customer-care': `
+                <h1>Customer Care</h1>
+                <p>Contact our support team for assistance.</p>
+            `
+        };
+
+        function showPage(page) {
+            document.getElementById('content').innerHTML = pages[page] || pages['intro'];
+        }
+
+        function toggleDropdown() {
+            const dropdown = document.querySelector('.dropdown-menu');
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function logout() {
+            alert("Logged Out Successfully");
+            document.getElementById('content').innerHTML = '<h1>Logged Out</h1><p>Please log in again to continue.</p>';
+            window.location.href="intro.html";
+        }
+ 
+        // Set initial page
+        showPage('intro');
+    </script>
+    <script>
+    const pages = {
+      goBack: function() {
+        window.history.back();
+      }
+    };
+
+    // Attach the event listener to the button
+    document.getElementById('backButton').addEventListener('click', pages.goBack);
+  </script>
+</body>
+</html>
